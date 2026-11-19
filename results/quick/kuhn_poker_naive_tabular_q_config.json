@@ -1,0 +1,16 @@
+{
+  "method": "naive_tabular_q",
+  "game": "kuhn_poker",
+  "training_hands": 5000,
+  "evaluate_every_hands": 50,
+  "seeds": [
+    0,
+    1
+  ],
+  "hyperparameters": {
+    "learning_rate": 0.01,
+    "starting_epsilon": 0.3,
+    "minimum_epsilon": 0.02,
+    "epsilon_decay_per_hand": 0.99995
+  }
+}

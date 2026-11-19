@@ -1,0 +1,25 @@
+{
+  "method": "naive_dqn",
+  "game": "kuhn_poker",
+  "training_hands": 5000,
+  "evaluate_every_hands": 50,
+  "seeds": [
+    0,
+    1
+  ],
+  "hyperparameters": {
+    "hidden_layer_sizes": [
+      64
+    ],
+    "learning_rate": 0.001,
+    "batch_size": 128,
+    "replay_buffer_capacity": 100000,
+    "minimum_transitions_before_learning": 1000,
+    "learn_every_decisions": 16,
+    "update_target_every_gradient_steps": 250,
+    "use_double_dqn": false,
+    "starting_epsilon": 0.3,
+    "minimum_epsilon": 0.02,
+    "epsilon_decay_per_hand": 0.99995
+  }
+}
