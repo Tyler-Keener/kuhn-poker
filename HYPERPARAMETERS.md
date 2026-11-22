@@ -85,3 +85,11 @@ Plan step 1 (fixed opponents, 100k hands): best response matched exactly in all 
 **Nov 22: Huber-loss ablation** (NFSP, 10 seeds, 2M hands, loss_function=huber).
 Average exploitability 0.147 [0.136, 0.157] vs. 0.0122 [0.0116, 0.0128] with squared error
 (Welch's t = 29.1, p = 2.9e-10). Confirms the single-seed diagnosis from Nov 14.
+
+**Nov 22: correction to the Nov 3 learning-rate entry** (experiments/diagnostics.py, 10 seeds, 100k hands).
+Against the always-bet opponent, learning rate 0.05 reached the best response (+0.333) in all 10 seeds,
+the same as 0.01. The earlier single-seed failure (+0.22) did not reproduce. 0.01 stays as a first choice.
+
+**Nov 22: fixed-opponent diagnostic** (experiments/diagnostics.py, 10 seeds, 100k hands, opponent = CFR after 15 iterations).
+Shortfall vs. best response: tabular 0.001, DQN squared error 0.007, DQN Huber 0.053 [0.040, 0.067].
+Value of betting the Queen first: exact -0.433; tabular -0.517; squared error -0.484; Huber -0.073.
