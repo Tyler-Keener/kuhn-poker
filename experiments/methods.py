@@ -33,6 +33,7 @@ SHARED_DQN_SETTINGS = {
     "learn_every_decisions": 16,
     "update_target_every_gradient_steps": 250,
     "use_double_dqn": False,
+    "loss_function": "mse",  # "huber" reproduces the bias described in HYPERPARAMETERS.md
 }
 
 DEFAULT_HYPERPARAMETERS = {
@@ -51,8 +52,8 @@ DEFAULT_HYPERPARAMETERS = {
 }
 
 DEFAULT_TRAINING_HANDS = {
-    "naive_tabular_q": 500_000,
-    "tabular_fsp": 500_000,
+    "naive_tabular_q": 2_000_000,
+    "tabular_fsp": 2_000_000,
     "naive_dqn": 2_000_000,
     "nfsp": 2_000_000,
 }
