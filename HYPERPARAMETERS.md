@@ -74,3 +74,14 @@ NFSP average 0.025 and still falling at 1M; naive DQN current 0.283 / after-the-
 average 0.068. Raised the neural budget to 2M hands for the final runs.
 
 <!-- Add new entries below: date, what you changed, how many trials/seeds, what happened. -->
+
+**Nov 22: final runs** (10 seeds each, 2M hands, seeds 0-9).
+Tabular methods rerun at 2M hands so all four methods share one budget.
+Naive tabular Q: current 0.230, after-the-fact average 0.121. Tabular FSP average 0.0128.
+Naive DQN: current 0.281, after-the-fact average 0.067. NFSP average 0.0122.
+Tabular FSP vs. NFSP: not significantly different (Welch's t = 1.76, p = 0.097).
+Plan step 1 (fixed opponents, 100k hands): best response matched exactly in all 10 seeds.
+
+**Nov 22: Huber-loss ablation** (NFSP, 10 seeds, 2M hands, loss_function=huber).
+Average exploitability 0.147 [0.136, 0.157] vs. 0.0122 [0.0116, 0.0128] with squared error
+(Welch's t = 29.1, p = 2.9e-10). Confirms the single-seed diagnosis from Nov 14.
